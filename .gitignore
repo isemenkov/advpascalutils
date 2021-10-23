@@ -80,3 +80,4 @@ lib/
 
 # wiki pages
 wiki/
+*.dia

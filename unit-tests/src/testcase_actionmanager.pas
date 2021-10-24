@@ -95,7 +95,6 @@ type
 
 implementation
 
-
 {$IFNDEF FPC}
 procedure TActionManagerTestCase.AssertTrue(ACondition: Boolean);
 begin

@@ -247,7 +247,7 @@ type
         ({$IFDEF FPC}specialize{$ENDIF} TUnsortableFunctor<TSubscribeItem>);
       TSubscribersContainer = {$IFDEF FPC}specialize{$ENDIF} 
         TMultiHash<TActionID, TSubscribeItem, TActionIDCompareFunctor, 
-        TSubscribeItemUnsortableFunctor>;
+        {$IFDEF FPC}specialize{$ENDIF} TUnsortableFunctor<TSubscribeItem> >;
   protected
     { Search action. }
     function SearchAction(ActionID : TActionID) : TAction;

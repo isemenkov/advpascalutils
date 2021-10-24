@@ -3,7 +3,8 @@ program advpascalutilstestcase;
 {$mode objfpc}{$H+}
 
 uses
-  Interfaces, Forms, GuiTestRunner, testcase_actionmanager;
+  Interfaces, Forms, GuiTestRunner, testcase_actionmanager,
+  testcase_eventmanager;
 
 {$R *.res}
 

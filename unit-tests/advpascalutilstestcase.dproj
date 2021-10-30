@@ -154,7 +154,12 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="..\source\advutils.action.pas"/>
-        <DCCReference Include="src\testcase_actionmanager.pas"/>
+        <DCCReference Include="src\testcase_actionmanager.pas">
+            <Form>$R *.RES</Form>
+        </DCCReference>
+        <DCCReference Include="src\testcase_eventmanager.pas">
+            <Form>$R *.RES</Form>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -193,12 +198,6 @@
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libpcre.dylib" Class="DependencyModule">
                     <Platform Name="iOSSimulator">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Win32\Debug\advpascalutilstestcase.exe" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win32">
-                        <RemoteName>advpascalutilstestcase.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

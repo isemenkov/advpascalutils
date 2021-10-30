@@ -48,7 +48,7 @@ type
         constructor Create(ActionID : TActionID; ARunStrategy : 
           TRunStrategy.TStrategy; AFreezeStrategy : TFreezeStrategy.TStrategy);
       protected
-        procedure RunAction; override;
+        procedure RunAction ({%H-}AData : TAnyValue); override;
       private
         FRunsCount : Cardinal;
       public  
@@ -144,7 +144,7 @@ begin
   FRunsCount := 0;
 end;
 
-procedure TActionManagerTestCase.TTestAction.RunAction;
+procedure TActionManagerTestCase.TTestAction.RunAction (AData : TAnyValue);
 begin
   Inc(FRunsCount);
 end;

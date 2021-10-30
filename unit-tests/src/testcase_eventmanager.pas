@@ -84,11 +84,6 @@ procedure TEventManagerTestCase.AssertEquals(Expected, Actual : String);
 begin
   CheckEquals(Expected, Actual);
 end;
-
-procedure TEventManagerTestCase.AssertEquals(Expected, Actual : String);
-begin
-  CheckEquals(Expected, Actual);
-end;
 {$ENDIF}
 
 procedure TEventManagerTestCase.ActionNotify(AData : TAnyValue);

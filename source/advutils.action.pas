@@ -156,7 +156,7 @@ type
     destructor Destroy; override;
 
     { Run action. }
-    function Run : TActionState;
+    function Run (AData : TAnyValue) : TActionState;
       {$IFNDEF DEBUG}inline;{$ENDIF}
 
     { Freeze action. }
@@ -175,7 +175,7 @@ type
     function IsFreeze : Boolean;
   protected
     { Do something. }
-    procedure RunAction; virtual; abstract;
+    procedure RunAction (AData : TAnyValue); virtual; abstract;
   protected
     FActionID : TActionID;
     FRunStrategy : TRunStrategy.TStrategy;
@@ -420,11 +420,11 @@ begin
   Result := FFreezeStrategy.IsFreeze;
 end;
 
-function TAction.Run : TActionState;
+function TAction.Run (AData : TAnyValue) : TActionState;
 begin
   if not FFreezeStrategy.IsFreeze then
   begin
-    RunAction;
+    RunAction(AData);
     Result := FRunStrategy.After;
     Exit;
   end;
@@ -483,7 +483,7 @@ begin
 
   if (Action <> nil) and (not Action.IsFreeze) then
   begin
-    State := Action.Run;
+    State := Action.Run(AData);
 
     case State of
       ACTION_RUN : 
